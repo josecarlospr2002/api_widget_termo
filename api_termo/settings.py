@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-5d0$u)5@6*f_qvha8afz+$wg5$8mc6^@lw1mm71$jdv4c1jg6)'
+SECRET_KEY = 'django-insecure-)=xqb7xxb(9q2k0qe)e5g=+e19*9iztjpumbx$c_um9t%p#690'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,12 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'bloques',
 ]
 
 MIDDLEWARE = [
@@ -73,10 +76,20 @@ WSGI_APPLICATION = 'api_termo.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
+    # Base de datos por defecto de Django (SQLite)
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    },
+    # Base de datos PostgreSQL (bbddt)
+    'bbddt': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'bbdd_termo',
+        'USER': 'postgres',
+        'PASSWORD':'postgres',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    },
 }
 
 
@@ -120,3 +133,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DATABASE_ROUTERS = ['api_termo.routers.BloquesRouter']
