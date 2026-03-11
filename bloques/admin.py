@@ -14,6 +14,17 @@ class Bloque1Admin(admin.ModelAdmin):
     )
     ordering = ('-id',)
 
+    # Solo para lectura: desactivar agregar, modificar y eliminar
+    def has_add_permission(self, request):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+
 @admin.register(Bloque2)
 class Bloque2Admin(admin.ModelAdmin):
     list_display = (
@@ -27,6 +38,16 @@ class Bloque2Admin(admin.ModelAdmin):
     )
     ordering = ('-id',)
 
+    def has_add_permission(self, request):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+
 @admin.register(Bloque3)
 class Bloque3Admin(admin.ModelAdmin):
     list_display = (
@@ -39,3 +60,12 @@ class Bloque3Admin(admin.ModelAdmin):
         'fecha'
     )
     ordering = ('-id',)
+
+    def has_add_permission(self, request):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
