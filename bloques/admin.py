@@ -9,7 +9,6 @@ class Bloque1Admin(admin.ModelAdmin):
         'temperatura',
         'calor',
         'potencia',
-        'potencia_calor',
         'fecha'
     )
     ordering = ('-id',)
@@ -33,7 +32,6 @@ class Bloque2Admin(admin.ModelAdmin):
         'temperatura',
         'calor',
         'potencia',
-        'potencia_calor',
         'fecha'
     )
     ordering = ('-id',)
@@ -56,7 +54,6 @@ class Bloque3Admin(admin.ModelAdmin):
         'temperatura',
         'calor',
         'potencia',
-        'potencia_calor',
         'fecha'
     )
     ordering = ('-id',)

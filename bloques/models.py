@@ -5,7 +5,6 @@ class Bloque1(models.Model):
     temperatura = models.FloatField()
     calor = models.FloatField()
     potencia = models.FloatField()
-    potencia_calor = models.FloatField()
     fecha = models.DateTimeField()
 
     class Meta:
@@ -23,7 +22,6 @@ class Bloque2(models.Model):
     temperatura = models.FloatField()
     calor = models.FloatField()
     potencia = models.FloatField()
-    potencia_calor = models.FloatField()
     fecha = models.DateTimeField()
 
     class Meta:
@@ -41,7 +39,6 @@ class Bloque3(models.Model):
     temperatura = models.FloatField()
     calor = models.FloatField()
     potencia = models.FloatField()
-    potencia_calor = models.FloatField()
     fecha = models.DateTimeField()
 
     class Meta:

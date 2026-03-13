@@ -4,6 +4,11 @@ class BloquesRouter:
             return 'bbddt'
         return None
 
+    def db_for_write(self, model, **hints):
+        if model._meta.app_label == 'bloques':
+            raise Exception("ESCRITURAS NO PERMITIDAS")
+        return None
+
     def allow_migrate(self, db, app_label, model_name=None, **hints):
         if app_label == 'bloques':
             return False
