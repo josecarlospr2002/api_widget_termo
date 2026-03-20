@@ -13,7 +13,7 @@ class Bloque1Admin(admin.ModelAdmin):
     )
     ordering = ('-id',)
 
-    # Solo para lectura: desactivar agregar, modificar y eliminar
+    # Solo para lectura: desactivado agregar, modificar y eliminar
     def has_add_permission(self, request):
         return False
 
