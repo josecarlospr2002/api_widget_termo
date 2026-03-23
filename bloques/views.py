@@ -1,11 +1,11 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny
 from .models import Bloque1, Bloque2, Bloque3
 from .serializers import Bloque1_Serializer, Bloque2_Serializer, Bloque3_Serializer
 
 class Bloques_All(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
     def get(self, request):
         bloque1 = Bloque1.objects.using('bbddt').all()
